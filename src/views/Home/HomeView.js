@@ -15,47 +15,50 @@ class HomeView extends React.Component {
     }
 
     fetchData = async () => {
-        await fetch('http://localhost:3000/')
-        .then(res=>res.json())
-        .then(data => {
-            console.log("sd", data) 
-            // this.setState({
-            //     data,
-            //     isLoading: false,
-            // })
-        })
-        .catch(err => {
-            console.log("Error Reading data " + err);
-        });
+       
     };
 
     render() {
         const { data, isLoading } = this.state;
-        console.log(data)
-        return (
-            <div> 
-                <h1>Home View</h1>
-                <ul>
-                    <li>Users</li>
-                    <li>First Name</li>
-                    <li>Last Name</li>
-                    <li>Email</li>
-                    <li>Password</li>
-                    <li>Registered Date</li>
-                </ul>
-                <ul>
-                    <li>
-                        <span></span>
-                    </li>
-                </ul>
 
-                <form>
-                    <input placeholder="Name"/>
-                    <input placeholder="Last Name" />
-                    <input placeholder="Email"/>
-                    <input placeholder="Password"/>
-                    <button>Subbmit</button>
-                </form>
+        return (
+            <div style={{backgroundImage: 'url("https://images.wisegeek.com/five-people-smiling-at-each-other-at-table.jpg")'}}> 
+
+                <div>
+                    <span>Social Network</span>
+                    <span>Sign In / Sign Up</span>
+                </div>
+
+
+                <div className="login">
+                    <div>
+                        <input placeholder="Your email address"/>
+                        <input placeholder="Your password" />
+                        <button>Login</button>
+                    </div>
+                    <div>
+                        <span>Remember this device</span>
+                        <span>Forgot password?</span>
+                    </div>
+
+                    <button>Login</button>
+                </div>
+
+
+                <div>
+                    <input placeholder="First name"/>
+                    <input placeholder="Last name" />
+
+                    <input placeholder="Email" />
+                    <input placeholder="Password" />
+
+                    <input placeholder="Birth date" />
+
+                    <checkbox value="Male" />
+                    <checkbox value="Female" />
+
+                </div>
+
             </div>
         )
     }

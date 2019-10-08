@@ -22,6 +22,7 @@ class Layout extends React.Component {
     render() {
         return (
             <>
+            <h1>Layout</h1>
                 <BrowserRouter>
                     <Header />
                     
