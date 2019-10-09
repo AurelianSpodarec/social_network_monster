@@ -19,15 +19,15 @@ app.use(userRouter)
 
 const jwt = require('jsonwebtoken')
 
-const myFunction = async () => {
-    const token = jwt.sign({_id: 'abc123'}, 'secret', { expiresIn: '7 days' })
-    console.log(token)
+// const myFunction = async () => {
+//     const token = jwt.sign({_id: 'abc123'}, 'secret', { expiresIn: '7 days' })
+//     console.log(token)
 
-    const data = jwt.verify(token, 'secret')
-    console.log("SDSSD", data)
-}
+//     const data = jwt.verify(token, 'secret')
+//     console.log("SDSSD", data)
+// }
 
-myFunction()
+// myFunction()
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
