@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route} from 'react-router-dom';
-
+// import './index.ccss';
 import HomeView from './Home/HomeView';
 import ToDoView from './ToDo/ToDoView';
 
@@ -20,6 +20,14 @@ class Container extends React.Component {
 class Layout extends React.Component {
 
     render() {
+
+        if(true) {
+            return (
+                <>
+                    {this.props.children}
+                </>
+            )
+        } else {
         return (
             <>
             <h1>Layout</h1>
@@ -35,6 +43,7 @@ class Layout extends React.Component {
                 </BrowserRouter>
             </>
         )
+        }
     }
 }
 
