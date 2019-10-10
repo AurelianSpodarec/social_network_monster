@@ -42,7 +42,9 @@
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
+
 UNDER DEVELOPMENT - TO BE UPDATED
+
 
 ## About The Project
 
@@ -71,9 +73,59 @@ Used the MERN stack with some touch of a CSS framework.
 
 
 
+## Getting Started
+
+To get started you will need to have already installed MongoDB and NodeJS.
+
+### Prerequisites
+
+* npm
+```sh
+npm install npm@latest -g
+```
+
+### Installation
+
+2. Clone the repo
+```sh
+git clone https://github.com/AurelianSpodarec/social_network_monster
+```
+3. Install NPM packages
+```sh
+npm install
+```
+
+
+## Licence
+You can freely use any bits of code you want.
+
+MIT © Aurelian Spodarec
+
+
+## Contact
+Aurelian Spodarec - AurelianXSpodarec@gmail.com
+
+Project LInk: https://github.com/AurelianSpodarec/social_network_monster
+
+
 ## Acknowledgements
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
