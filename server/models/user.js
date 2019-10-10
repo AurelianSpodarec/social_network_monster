@@ -41,6 +41,18 @@ const userSchema = new mongoose.Schema({
     }]
 })
 
+userSchema.methods.toJSON = function() {
+    const user = this
+    const userObject = user.toObject()
+    const hiddenFields = ['password', 'tokens']
+
+    hiddenFields.filter(hiddenField =>  {
+        delete userObject[hiddenField]
+    })
+
+    return userObject
+}
+
 userSchema.methods.generateAuthToken = async function () {
     const user = this
     const token = jwt.sign({ _id: user._id.toString() }, 'secret')
