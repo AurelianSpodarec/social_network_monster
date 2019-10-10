@@ -3,6 +3,7 @@ import { BrowserRouter, Route} from 'react-router-dom';
 // import './index.ccss';
 import HomeView from './Home/HomeView';
 import ToDoView from './ToDo/ToDoView';
+import LoginView from './Login/LoginView';
 
 import Header from './../components/Header';
 import Footer from './../components/Footer';
@@ -21,29 +22,22 @@ class Layout extends React.Component {
 
     render() {
 
-        if(true) {
-            return (
-                <>
-                    {this.props.children}
-                </>
-            )
-        } else {
+        
         return (
             <>
-            <h1>Layout</h1>
                 <BrowserRouter>
-                    <Header />
+                    {/* <Header /> */}
                     
-                    <Container>
-                        <Route path="/" exact component={HomeView} />
+                    {/* <Container> */}
+                        <Route path="/" exact component={LoginView} />
                         <Route path="/discovery" component={ToDoView} />
-                    </Container>
+                    {/* </Container> */}
                     
-                    <Footer />
+                    {/* <Footer /> */}
                 </BrowserRouter>
             </>
         )
-        }
+        
     }
 }
 
