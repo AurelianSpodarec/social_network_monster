@@ -3,18 +3,14 @@ const User = require('../models/user')
 
 const auth = async (req, res, next) => {
     try {
-        const token = req.header('Authorization').replace('Bearer ', '')
-        // const token = req.header('Authorization').substring(7) Different way of doing it :) 4hours to figure out I missed space.
-
-        console.log("Auth Token", token)
+        const token = req.header('Authorization').substring(7)
         const decoded = jwt.verify(token, 'secret')
-        console.log("Auth decoded", decoded)
         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token })
-        console.log("Auth User", user)
-        if(!user) {
-            throw new Error()
-        }
 
+        if(!user) throw new Error()
+        
+
+        req.token = token
         req.user = user
         next()
     } catch (e) {
