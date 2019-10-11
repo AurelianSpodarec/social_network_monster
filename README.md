@@ -115,7 +115,8 @@ Project LInk: https://github.com/AurelianSpodarec/social_network_monster
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
 
-
+## Credit
+Login Image - Photo by Priscilla Du Preez on Unsplash
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
