@@ -146,23 +146,25 @@ const useStyles = makeStyles(theme => ({
                         </Grid>
                     </Grid>
 
-                    <Grid container>                         
+                    <Grid container justifyContent="center">                         
                         <Button variant="contained" color="primary">
                             Login
                         </Button>
                     </Grid>
 
-                        <Box display="flex" justifyContent="center">
-                            <hr orientation="horizontal"/>
+                        <Box display="flex" alignContent="center" justifyContent="center" fullWidth>
+                            {/* <hr orientation="horizontal"/> */}
                             <span>Or</span>
-                            <hr orientation="horizontal"/>
+                            {/* <hr orientation="horizontal"/> */}
                         </Box>
 
-                    
-                        <Button>Login with Google</Button>
-                        <Button>Login with Facebook</Button>
-                    
-                    
+                        <Button variant="contained" color="primary" fullWidth>
+                            Login with Google
+                        </Button>
+                        <Button variant="contained" color="primary" fullWidth>
+                            Login with Facebook
+                        </Button>
+                                        
                     </form>
                     
                     </CardContent>
