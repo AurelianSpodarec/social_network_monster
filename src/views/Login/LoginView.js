@@ -12,7 +12,10 @@ import {
     CardContent, 
     Typography, 
     FormControlLabel, 
-    Checkbox 
+    Checkbox,
+    Divider,
+    CssBaseline,
+    Box
 } from '@material-ui/core';
 
 const imgFriends = require('./img/friends.jpg')
@@ -65,27 +68,45 @@ const useStyles = makeStyles(theme => ({
     menu: {
       width: 200,
     },
-  }));
-class Layout extends React.Component {
-    
-    state = {
 
+    a: {
+        height: "100vh",
+        position: "relative"
+    },
+    b: {
+        height: "100%",
+        backgroundSize: "cover"
     }
-    render() {
-    
-        const classes = useStyles;
-        return (
 
-            <div style={{ backgroundImage: "url(" + imgFriends + ")"}}>
+  }));
+    function Layout() {
+    
+   
+
+    
+      const classes = useStyles();
+    
+        return (
+            <div className={classes.b} style={{ backgroundImage: "url(" + imgFriends + ")"}}>
+            <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justify="center"
+                style={{ minHeight: '100vh' }}
+                >
 
                 <Container maxWidth="xs">
+                {/* <CssBaseline /> */}
                 <Card className={classes.card}>
+                    <Box display="flex" justifyContent="center" alignItems="center">
                     <CardContent>
                     <form className={classes.container} noValidate autoComplete="off">
+                        <Grid>
                     <TextField
                         id="outlined-email-input"
                         label="Email"
-                        className={classes.textField}
                         type="email"
                         name="email"
                         autoComplete="email"
@@ -96,40 +117,64 @@ class Layout extends React.Component {
                     <TextField
                         id="outlined-password-input"
                         label="Password"
-                        className={classes.textField}
                         type="password"
                         autoComplete="current-password"
                         margin="normal"
                         variant="outlined"
                         fullWidth
                     />
-                    </form>
-
-                    <div>
+                    </Grid>
+                    
                     <Grid container>
                         <Grid item xs>
-                        <Link href="#" variant="body2">
-                            Forgot password?
-                        </Link>
+                        <FormControlLabel
+                            control={
+                            <Checkbox   
+                                // checked={state.checkedB}
+                                // onChange={handleChange('checkedB')}
+                                value="checkedB"
+                                color="primary"
+                            />
+                            }
+                            label="Remember Me"
+                        />
                         </Grid>
                         <Grid item>
                         <Link href="#" variant="body2">
-                            {"Don't have an account? Sign Up"}
+                            {"Forgot password?"}
                         </Link>
                         </Grid>
                     </Grid>
-                    </div>
+
+                    <Grid container>                         
+                        <Button variant="contained" color="primary">
+                            Login
+                        </Button>
+                    </Grid>
+
+                        <Box display="flex" justifyContent="center">
+                            <hr orientation="horizontal"/>
+                            <span>Or</span>
+                            <hr orientation="horizontal"/>
+                        </Box>
 
                     
+                        <Button>Login with Google</Button>
+                        <Button>Login with Facebook</Button>
+                    
+                    
+                    </form>
+                    
                     </CardContent>
+                </Box>
                 </Card>
                 </Container>
 
+             </Grid>
+                </div>
 
-             </div>
-
-        )
-    }
+        );
+    
 }
 
 export default Layout;

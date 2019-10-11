@@ -23,17 +23,13 @@ const styles = theme => ({
 class Layout extends React.Component {
 
     render() {
-
-        
         return (
             <>
                 <BrowserRouter>
                     {/* <Header /> */}
                     
-                   
                         <Route path="/" exact component={LoginView} />
                         <Route path="/discovery" component={ToDoView} />
-                    
                     
                     {/* <Footer /> */}
                 </BrowserRouter>
