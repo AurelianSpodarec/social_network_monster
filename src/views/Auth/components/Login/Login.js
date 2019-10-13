@@ -1,3 +1,4 @@
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { 
     TextField, 
@@ -18,6 +19,7 @@ import {
 } from '@material-ui/core';
 
 export const Login = (props) => {
+    console.log(props)
     return (
         <>
             <FormControl noValidate autoComplete="off">
@@ -65,7 +67,7 @@ export const Login = (props) => {
                 </Grid>
 
                 <Button variant="contained" color="primary">
-                    Login
+                    {props.isLogin ? "Login" : "Create an account"}
                 </Button>
                 
                 </FormControl>
@@ -76,17 +78,17 @@ export const Login = (props) => {
                     <hr orientation="horizontal"/>
                 </Box>
 
-                <Button variant="contained" color="primary" fullWidth>
-                    Login with Google
-                </Button>
-                <Button variant="contained" color="primary" fullWidth>
-                    Login with Facebook
-                </Button>
+                {props.isLogin ? 
+                    <>
+                    <Button variant="contained" color="primary" fullWidth>Login with Google</Button>
+                    <Button variant="contained" color="primary" fullWidth>Login with Facebook</Button>
+                    </>
+                : null}
 
                 <Box item display="flex" alignItems="center" flexDirection="column">
-                    <p>Don't have an account?</p>
+                    <p>{props.isLogin ? "Don't have an account?" : "Already have an account?"}</p>
                     <Link href="#" variant="body2">
-                        {"Create an account"}
+                        {props.isLogin ? "Create an account" : "Login"}
                     </Link>
                 </Box>              
         </>
