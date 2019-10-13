@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route} from 'react-router-dom';
-// import './index.ccss';
 import HomeView from './Home/HomeView';
 import ToDoView from './ToDo/ToDoView';
-import LoginView from './Login/LoginView';
-import CssBaseline from "@material-ui/core/CssBaseline";
+import AuthView from './Auth/AuthView';
 import { withStyles } from "@material-ui/core";
 import Header from './../components/Header';
 import Footer from './../components/Footer';
@@ -28,7 +26,7 @@ class Layout extends React.Component {
                 <BrowserRouter>
                     {/* <Header /> */}
                     
-                        <Route path="/" exact component={LoginView} />
+                        <Route path="/" exact component={AuthView} />
                         <Route path="/discovery" component={ToDoView} />
                     
                     {/* <Footer /> */}

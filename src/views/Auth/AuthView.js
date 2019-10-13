@@ -17,8 +17,9 @@ import {
     Box,
     FormControl
 } from '@material-ui/core';
-
-
+// import Login from './components/Login/Login';
+// import Register from './components/Register/Register';
+  
 class AuthView extends React.Component {
 
     status = {
@@ -26,99 +27,37 @@ class AuthView extends React.Component {
     }
 
     render() {
-        const [renderLogin, setRenderLogin] = useState(true);
-        
+        // const [renderLogin, setRenderLogin] = useState(true);
+        // const classes = useStyles
         return (
-            <div className={classes.b} style={{ backgroundImage: "url(" + require('./img/friends.jpg') + ")"}}>
+            
+            <Box style={{ backgroundImage: "url(" + require('./img/friends.jpg') + ")", height: '100%', backgroundSize: 'cover'}}>
                 <Grid
-                    container
                     spacing={0}
-                    direction="column"
-                    alignItems="center"
+                    container
+                    direction="row"
                     justify="center"
+                    alignItems="center"
                     style={{ minHeight: '100vh' }}
-                    >
+                >
 
                     <Container maxWidth="xs">
-                    <Card className={classes.card}>
+                    <Card>
                     <Box display="flex" justifyContent="center" alignItems="center">
+                    <CardContent>
 
-                        <CardContent>
-                            {renderLogin ? <Login /> : <Register />}
-                        </CardContent>
-                        
+                        {/* {true ? <Login /> : <Register />} */}
+
+                    </CardContent>
                     </Box>
                     </Card>
                     </Container>
 
                 </Grid>
-            </div>
+            </Box>
+            // </Box>
         )
     }
 }
 
 export default AuthView;
-
-
-// const Auth = (props) => {
-//     return (
-//       <Card>
-//         <h2 className="header secondary">{ props.title }</h2>
-//         <Input name="Email" inputRef="user email" />
-//         <Input name="Password" inputRef="user password" />
-//       </Card>
-//     )
-//   }
-
-//   const Card = (props) => {
-//     return (
-//       <div className="card">
-//         { props.children }
-//       </div>
-//     )
-//   }
-
- 
-
-
-const useStyles = makeStyles(theme => ({
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column'
-    },
-    textField: {
-      marginLeft: theme.spacing(1),
-      width: "100%",
-      marginRight: theme.spacing(1),
-    },
-    dense: {
-      marginTop: theme.spacing(2),
-    },
-    menu: {
-      width: 200,
-    },
-
-    a: {
-        height: "100vh",
-        position: "relative"
-    },
-    b: {
-        height: "100%",
-        backgroundSize: "cover"
-    }
-
-  }));
-    function Layout() {
-     
-      const classes = useStyles();
-    
-        return (
-            
-
-        );
-    
-}
-
-export default Layout;
