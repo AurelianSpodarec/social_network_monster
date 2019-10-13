@@ -19,6 +19,7 @@ import {
 } from '@material-ui/core';
 // import Login from './components/Login/Login';
 // import Register from './components/Register/Register';
+import { readUsers } from './../../services/network/models/user';
   
 class AuthView extends React.Component {
 
@@ -28,6 +29,16 @@ class AuthView extends React.Component {
             isLogin: true
         };
       }
+
+      componentDidMount() {
+        this.fetchData();
+    }
+
+    async fetchData() {
+        const a = await readUsers();
+        console.log(a)
+    }
+
 
     onChangeLogin = () => {
         this.setState({
@@ -124,23 +135,23 @@ class AuthView extends React.Component {
                 </Grid>
                 
                 <Grid container>
-                    <Grid item xs>
-                    <FormControlLabel
-                        control={
-                        <Checkbox   
-                            // checked={state.checkedB}
-                            // onChange={handleChange('checkedB')}
-                            value="checkedB"
-                            color="primary"
+                    <Grid>
+                        <FormControlLabel
+                            control={
+                            <Checkbox   
+                                // checked={state.checkedB}
+                                // onChange={handleChange('checkedB')}
+                                value="checkedB"
+                                color="primary"
+                            />
+                            }
+                            label="Remember Me"
                         />
-                        }
-                        label="Remember Me"
-                    />
                     </Grid>
-                    <Grid item>
-                    <Link href="#" variant="body2">
-                        {"Forgot password?"}
-                    </Link>
+                    <Grid>
+                        <Link href="#" variant="body2">
+                            {"Forgot password?"}
+                        </Link>
                     </Grid>
                 </Grid>
 
@@ -150,7 +161,7 @@ class AuthView extends React.Component {
                 
                 </FormControl>
 
-                <Box display="flex" alignContent="center" justifyContent="center" fullWidth>
+                <Box display="flex" alignContent="center" justifyContent="center" >
                     <hr orientation="horizontal"/>
                     <span>Or</span>
                     <hr orientation="horizontal"/>
@@ -163,7 +174,7 @@ class AuthView extends React.Component {
                     </>
                 : null}
 
-                <Box item display="flex" alignItems="center" flexDirection="column">
+                <Box display="flex" alignItems="center" flexDirection="column">
                     <p>{this.state.isLogin ? "Don't have an account?" : "Already have an account?"}</p>
                     <Link onClick={this.onChangeLogin} href="#" variant="body2">
                         {this.state.isLogin ? "Create an account" : "Login"}

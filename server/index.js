@@ -3,6 +3,7 @@ require('./db/mongoose')
 const userRouter = require('./routers/user')
 
 const app = express()
+const cors = require('cors');
 const port = process.env.PORT || 3001
 
 // Maintenance
@@ -13,6 +14,8 @@ const port = process.env.PORT || 3001
 //         next()
 //     }
 // })
+
+app.use(cors());
 
 app.use(express.json())
 app.use(userRouter)
