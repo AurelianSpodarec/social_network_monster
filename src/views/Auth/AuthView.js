@@ -36,7 +36,7 @@ class AuthView extends React.Component {
         };
       }
 
-      componentDidMount() {
+    componentDidMount() {
         this.fetchData();
     }
 
@@ -50,8 +50,8 @@ class AuthView extends React.Component {
             "email": this.state.loginEmail,
             "password": this.state.loginPassword
         }
-        console.log(data)
-       await fetch('http://localhost:3001/users/login',{
+        
+        await fetch('http://localhost:3001/users/login',{
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
