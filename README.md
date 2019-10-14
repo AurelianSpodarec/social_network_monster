@@ -17,7 +17,7 @@
   <p align="center">
     Connect and share your moments with friends!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »[in development]</strong></a>
+    <a href=""><strong>Explore the docs »[in development]</strong></a>
     <br />
     <br />
     <a href="#">View Demo</a>
@@ -45,6 +45,18 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Social network monster is build so you can share your moments with friends. Login to the webapp and invite your frineds. Its just like facebook! 
+
+I've build the project for fun, doing the front-end and the back-end, so called full-stack.
+
+Some things you can do is:
+
+Login
+Register
+Add frineds
+Build RESTful API
+
 
 To be written.
 
