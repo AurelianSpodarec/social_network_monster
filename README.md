@@ -95,6 +95,10 @@ git clone https://github.com/AurelianSpodarec/social_network_monster
 npm install
 ```
 
+## Usage
+
+Videos about the app
+
 
 ## Licence
 You can freely use any bits of code you want.
