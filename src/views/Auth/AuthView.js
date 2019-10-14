@@ -47,15 +47,17 @@ class AuthView extends React.Component {
 
     onLogin = async () => {
         // console.log(this.state.loginEmail)
+        const data = {
+            "email": this.state.loginEmail,
+            "password": this.state.loginPassword
+        }
+        console.log(data)
        await fetch('http://localhost:3001/users/login',{
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                "email": "qwe@gmail.com",
-                "password": "asdasdasd"
-            })
+            body: JSON.stringify(data)
         }).then(data => {return data.json()})
         .then(res => {console.log(res)})
         .catch(error => {console.log(error)})
@@ -63,16 +65,17 @@ class AuthView extends React.Component {
     }
 
     onRegister = async () => {
+        const data = {
+            "email": this.state.registerEmail,
+            "firstName": this.state.registerName,
+            "password": this.state.registerPassword
+        }
         await fetch('http://localhost:3001/users', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                "firstName": "aaaaaaaaaaaaaaaaaaaaaa",
-                "email": "qwe1@gmail.com",
-                "password": "asdasdasd"
-            })
+            body: JSON.stringify(data)
         }).then(data => {return data.json()})
         .then(res => {console.log(res)})
         .catch(error => {console.log(error)})
