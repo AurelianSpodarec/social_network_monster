@@ -57,6 +57,12 @@ Register
 Add frineds
 Build RESTful API
 
+Roles:
+Admin
+Staff
+User
+Guest
+
 
 To be written.
 
