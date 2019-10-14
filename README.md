@@ -69,7 +69,7 @@ Used the MERN stack with some touch of a CSS framework.
 * [ExpressJS](https://expressjs.com/)
 * [ReactJS](https://reactjs.org/)
 * [NodeJS](https://nodejs.org/en/)
-* [Tailwindcss](https://tailwindcss.com/)
+* [Material-UI](https://material-ui.com/)
 
 
 
@@ -112,7 +112,6 @@ Project LInk: https://github.com/AurelianSpodarec/social_network_monster
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
 
 ## Credit
@@ -130,3 +129,5 @@ Login Image - Photo by Priscilla Du Preez on Unsplash
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/aurelianspodarec/

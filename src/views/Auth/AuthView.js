@@ -46,7 +46,6 @@ class AuthView extends React.Component {
     }
 
     onLogin = async () => {
-        // console.log(this.state.loginEmail)
         const data = {
             "email": this.state.loginEmail,
             "password": this.state.loginPassword
