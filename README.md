@@ -42,10 +42,6 @@
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
-
-UNDER DEVELOPMENT - TO BE UPDATED
-
-
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -60,7 +56,6 @@ Bullet points:
 To be written.
 
 
-
 ### Built With
 
 Used the MERN stack with some touch of a CSS framework.
@@ -70,7 +65,6 @@ Used the MERN stack with some touch of a CSS framework.
 * [ReactJS](https://reactjs.org/)
 * [NodeJS](https://nodejs.org/en/)
 * [Material-UI](https://material-ui.com/)
-
 
 
 ## Getting Started
