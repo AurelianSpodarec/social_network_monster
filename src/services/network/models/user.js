@@ -13,8 +13,14 @@ const readUser = async (id) => {
 }
 
 // Needs token
-const readUserProfile = async () => {
-    const res = await fetch(`${config.apiUrl}/users/me`,  getRequest())
+const readCurrentUserProfile = async (token) => {
+    const res = await fetch(`${config.apiUrl}/users/me`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body:  JSON.stringify({token})
+    })
     return await res.json()
 }
 
@@ -23,10 +29,8 @@ const deleteUser = async (id) => {
     return await res.json()
 }
 
-
-
-const updateUser = async () => {
-    const res = await fetch(`${config.apiUrl}`, 'PATCH')
+const updateUser = async (id) => {
+    const res = await fetch(`${config.apiUrl}/users`, 'PATCH')
     return await res.json()
 }
 
@@ -38,5 +42,9 @@ const createUser = async () =>{
 export {
     readUsers,
     readUser,
-    readUserProfile
+    readUserProfile,
+    readCurrentUserProfile,
+    deleteUser,
+    updateUser,
+    createUser
 }

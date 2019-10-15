@@ -52,16 +52,20 @@ I've build the project for fun, doing the front-end and the back-end, so called 
 
 Some things you can do is:
 
+
+Build RESTful API
+
+
 Login
 Register
 Add frineds
-Build RESTful API
+
 
 Roles:
-Admin
-Staff
-User
-Guest
+ Admin
+ Staff
+ User
+ Guest
 
 
 To be written.
