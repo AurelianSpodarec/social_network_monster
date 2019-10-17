@@ -50,7 +50,7 @@ class AuthView extends React.Component {
             "email": this.state.loginEmail,
             "password": this.state.loginPassword
         }
-        
+
         await fetch('http://localhost:3001/users/login',{
             method: 'POST',
             headers: {
@@ -62,6 +62,22 @@ class AuthView extends React.Component {
         .catch(error => {console.log(error)})
         
     }
+
+    // onRequestCreateUser(data) {
+
+    // }
+
+    // onRegister = () => {
+       
+    //     createUser('POST', {
+    //         "name": "Tom",
+    //     })
+    // }
+    // onUpdateUser = () => {
+    //     updateUser('id:2322', "PATH" {
+    //         "name": "Jerry"
+    //     })
+    // }
 
     onRegister = async () => {
         const data = {
