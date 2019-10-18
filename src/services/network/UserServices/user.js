@@ -1,5 +1,22 @@
-import config from './../../config';
-import { getRequest } from './../requests/getRequest';
+import config from '../../config';
+import { getRequest } from '../requests/getRequest';
+
+
+class UserServices {
+    
+    readUsers() {
+
+    }
+
+    readUser() {
+
+    }
+
+    updateUser() {
+        
+    }
+
+}
 
 // Get
 const readUsers = async () => {
@@ -30,7 +47,7 @@ const deleteUser = async (id) => {
 }
 
 const updateUser = async (id) => {
-    const res = await fetch(`${config.apiUrl}/users`, 'PATCH')
+    const res = await fetch(`${config.apiUrl}/users`,getRequest('PATCH', {"name": "Tom"}))
     return await res.json()
 }
 

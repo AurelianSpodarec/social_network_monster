@@ -1,12 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route} from 'react-router-dom';
+
+import { 
+    BrowserRouter, 
+    Route,
+    Link,
+    Redirect
+} from 'react-router-dom';
+
 import HomeView from './Home/HomeView';
 import ToDoView from './ToDo/ToDoView';
 import AuthView from './Auth/AuthView';
 import { withStyles } from "@material-ui/core";
 import Header from './../components/Header';
 import Footer from './../components/Footer';
-import { readUsers } from './../services/network/models/user';
+
 
 const styles = theme => ({
 	"@global": {
@@ -23,6 +30,7 @@ class Layout extends React.Component {
 
 
     render() {
+
         return (
             <>
                 <BrowserRouter>

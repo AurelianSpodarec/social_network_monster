@@ -1,270 +1,122 @@
 import React from 'react';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { 
-    TextField, 
-    Grid, 
-    Link, 
-    Container, 
-    Button, 
-    Card, 
-    CardActions, 
-    CardContent, 
-    Typography, 
-    FormControlLabel, 
-    Checkbox,
-    Divider,
-    CssBaseline,
-    Box,
-    FormControl
-} from '@material-ui/core';
-import { readUsers } from './../../services/network/models/user';
-  
-class AuthView extends React.Component {
+import Container from '@material-ui/core/Container';
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLogin: true,
-            loginEmail: "",
-            loginPassword: "",
-            registerEmail: "",
-            registerName: "",
-            registerPassword: "",
-            registerPasswordConfirm: "",
-            stayLoggedIn: false,
-            agreeTOS: false,
-        };
-      }
-
-    componentDidMount() {
-        this.fetchData();
-    }
-
-    async fetchData() {
-        const a = await readUsers();
-        console.log(a)
-    }
-
-    onLogin = async () => {
-        const data = {
-            "email": this.state.loginEmail,
-            "password": this.state.loginPassword
-        }
-
-        await fetch('http://localhost:3001/users/login',{
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then(data => {return data.json()})
-        .then(res => {console.log(res)})
-        .catch(error => {console.log(error)})
-        
-    }
-
-    // onRequestCreateUser(data) {
-
-    // }
-
-    // onRegister = () => {
-       
-    //     createUser('POST', {
-    //         "name": "Tom",
-    //     })
-    // }
-    // onUpdateUser = () => {
-    //     updateUser('id:2322', "PATH" {
-    //         "name": "Jerry"
-    //     })
-    // }
-
-    onRegister = async () => {
-        const data = {
-            "email": this.state.registerEmail,
-            "firstName": this.state.registerName,
-            "password": this.state.registerPassword
-        }
-        await fetch('http://localhost:3001/users', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then(data => {return data.json()})
-        .then(res => {console.log(res)})
-        .catch(error => {console.log(error)})
-        
-    }
-
-    onChangeTextField = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-        console.log(this.state)
-    }
-
-
-    onChangeLogin = () => {
-        this.setState({
-            ...this.state,
-            isLogin: !this.state.isLogin
-        })
-    }
-
-    render() {
-        // const [renderLogin, setRenderLogin] = useState(true);
-        // const classes = useStyles
-        const { isLogin } = this.state;
-        return (
-            <Box style={{ backgroundImage: "url(" + require('./img/friends.jpg') + ")", height: '100%', backgroundSize: 'cover'}}>
-                <Grid
-                    spacing={0}
-                    container
-                    direction="row"
-                    justify="center"
-                    alignItems="center"
-                    style={{ minHeight: '100vh' }}
-                >
-
-                    <Container maxWidth="xs">
-                    <Card>
-                    <Box display="flex" justifyContent="center" alignItems="center">
-                    <CardContent>
-
-                        
-
-                    <FormControl noValidate autoComplete="off">
-                        <Grid>
-                            {isLogin ? 
-                            <>
-                                <TextField
-                                    label="Email"
-                                    type="email"
-                                    autoComplete='off'
-                                    margin="normal"
-                                    variant="outlined"
-                                    onChange={this.onChangeTextField}
-                                    value={this.state.loginEmail}
-                                    name="loginEmail"
-                                    fullWidth
-                                />
-                                <TextField
-                                    label="Password"
-                                    type="password"
-                                    autoComplete='off'
-                                    margin="normal"
-                                    variant="outlined"
-                                    onChange={this.onChangeTextField}
-                                    value={this.state.loginPassword}
-                                    name="loginPassword"
-                                    fullWidth
-                                />
-                            </>
-                            : 
-                            <>
-                            <TextField
-                                label="Email"
-                                type="email"
-                                name="email"
-                                margin="normal"
-                                variant="outlined"
-                                onChange={this.onChangeTextField}
-                                value={this.state.registerEmail}
-                                name="registerEmail"
-                                fullWidth
-                            />
-                            <TextField
-                                label="Name"
-                                type="text"
-                                name="name"
-                                margin="normal"
-                                variant="outlined"
-                                onChange={this.onChangeTextField}
-                                value={this.state.registerName}
-                                name="registerName"
-                                fullWidth
-                            />
-                            <TextField
-                                label="Password"
-                                type="password"
-                                autoComplete="current-password"
-                                margin="normal"
-                                variant="outlined"
-                                onChange={this.onChangeTextField}
-                                value={this.state.registerPassword}
-                                name="registerPassword"
-                                fullWidth
-                            />
-                            <TextField
-                                label="Password(Confirm)*"
-                                type="password"
-                                autoComplete="current-password"
-                                margin="normal"
-                                variant="outlined"
-                                onChange={this.onChangeTextField}
-                                value={this.state.registerPasswordConfirm}
-                                name="registerPasswordConfirm"
-                                fullWidth
-                            />
-                            </>
-                            }
-                        </Grid>
-                        
-                        <Grid container>
-                            <Grid>
-                                <FormControlLabel
-                                    control={
-                                    <Checkbox   
-                                        // checked={state.checkedB}
-                                        // onChange={handleChange('checkedB')}
-                                        value="checkedB"
-                                        color="primary"
-                                    />
-                                    }
-                                    label="Remember Me"
-                                />
-                            </Grid>
-                            <Grid>
-                                <Link href="#" variant="body2">
-                                    {"Forgot password?"}
-                                </Link>
-                            </Grid>
-                        </Grid>
-
-                        <Button onClick={isLogin ? this.onLogin : this.onRegister} variant="contained" color="primary">
-                            {isLogin ? "Login" : "Create an account"}
-                        </Button>
-                        
-                        </FormControl>
-
-                        <Box display="flex" alignContent="center" justifyContent="center" >
-                            <hr orientation="horizontal"/>
-                            <span>Or</span>
-                            <hr orientation="horizontal"/>
-                        </Box>
-
-                        {isLogin ? 
-                            <>
-                            <Button variant="contained" color="primary" fullWidth>Login with Google</Button>
-                            <Button variant="contained" color="primary" fullWidth>Login with Facebook</Button>
-                            </>
-                        : null}
-
-                        <Box display="flex" alignItems="center" flexDirection="column">
-                            <p>{isLogin ? "Don't have an account?" : "Already have an account?"}</p>
-                            <Link onClick={this.onChangeLogin} href="#" variant="body2">
-                                {isLogin ? "Create an account" : "Login"}
-                            </Link>
-                        </Box>       
-                        
-                    </CardContent>
-                    </Box>
-                    </Card>
-                    </Container>
-
-                </Grid>
-            </Box>
-        )
-    }
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
 
-export default AuthView;
+const useStyles = makeStyles(theme => ({
+  '@global': {
+    body: {
+      backgroundColor: theme.palette.common.white,
+    },
+  },
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
+
+export default function AuthView() {
+  const classes = useStyles();
+
+  return (
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          {/* <LockOutlinedIcon /> */}
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <form className={classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Sign In
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="#" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>
+  );
+}
