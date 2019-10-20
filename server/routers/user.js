@@ -7,9 +7,13 @@ router.post('/users/login', async (req, res) => {
     try {
          const user = await User.findByCredentials(req.body.email, req.body.password)
          const token = await user.generateAuthToken()
-         res.send({ user, token})
+        //  res.header("Access-Control-Allow-Credentials", 'true');
+        //  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+         res.cookie('access_token', token, { maxAge: 3600, httpOnly: false });
+        //  res.send({ user, token})
+         res.status(200).end()
     } catch (e) {
-        res.status(400).send()
+        res.status(401).send()
     }
 
 })

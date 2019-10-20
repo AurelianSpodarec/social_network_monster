@@ -2,22 +2,6 @@ import config from '../../config';
 import { getRequest } from '../requests/getRequest';
 
 
-class UserServices {
-    
-    readUsers() {
-
-    }
-
-    readUser() {
-
-    }
-
-    updateUser() {
-        
-    }
-
-}
-
 // Get
 const readUsers = async () => {
     const res = await fetch(`${config.apiUrl}/users`,  getRequest())
@@ -59,7 +43,6 @@ const createUser = async () =>{
 export {
     readUsers,
     readUser,
-    readUserProfile,
     readCurrentUserProfile,
     deleteUser,
     updateUser,
